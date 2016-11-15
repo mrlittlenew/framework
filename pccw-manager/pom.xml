@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.pccw</groupId>
+		<artifactId>pccw-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.pccw</groupId>
+	<artifactId>pccw-manager</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<!-- 依赖管理 -->
+	<dependencies>
+		<dependency>
+			<groupId>com.pccw</groupId>
+			<artifactId>pccw-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<modules>
+		<module>pccw-manager-pojo</module>
+		<module>pccw-manager-mapper</module>
+		<module>pccw-manager-service</module>
+		<module>pccw-manager-web</module>
+	</modules>
+	<build>
+		<!-- 配置插件 -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+					<port>9090</port>
+					<path>/</path>
+					<url>http://localhost:9091/manager/text</url>
+					<username>tomcat</username>
+					<password>tomcat</password>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
