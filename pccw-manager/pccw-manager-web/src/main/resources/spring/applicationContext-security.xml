@@ -16,7 +16,7 @@
 		<intercept-url pattern="/**" access="ROLE_ADMIN"/>
 		<form-login login-page="/auth/login.do"
 			authentication-failure-url="/auth/login.do?error=true"
-			default-target-url="/main/common.do" />
+			default-target-url="/main/common.do" always-use-default-target="true" />
 
 		<logout invalidate-session="true" logout-success-url="/auth/login.do"
 			logout-url="/auth/logout.do" />
